@@ -1,0 +1,35 @@
+.containerHeader{
+  height: 4em;
+  padding: .5em;
+  display: flex;
+  background-color: #1d1d1d;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 5;
+  .logoContainer{
+    height: 100%;
+    width: 20%;
+    img{
+      height: 90%;
+      border: 1px solid #fff;
+      border-radius: 8px;
+    }
+  }
+  .headerOptions{
+    color: #fff;
+    width: 80%;
+    .optionsHeader{
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      font-size: .7em;
+      text-transform: uppercase;
+      padding: 0;
+    }
+  }
+}

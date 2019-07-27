@@ -1,0 +1,13 @@
+.containerCover{
+  height: calc(100vh - 4em);
+  width: 100vw;
+  position: relative;
+  top: 0;
+  .coverContent{
+    background-image: url('../images/video-placeholder.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,41 @@
+.containerBranches{
+  display: block;
+  .contentBranches{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    .imgBranches{
+      width: 50%;
+      height: 100%;
+      background-image: url('../images/fiebre.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top left;
+    }
+    .infoBranches{
+      width: 50%;
+      height: 100%;
+      .titleSection{
+        margin-top: 3em;
+      }
+      .branch{
+        .nameBranch{font-weight: bold}
+        p{
+          font-size: 1.5em;
+          margin: 0;
+          font-weight: 500;
+        }
+        button{
+          padding: 1em 2em;
+          margin: 1em 0;
+          width: 30%;
+          border: none;
+          font-size: 1.2em;
+          text-align: center;
+          font-family: 'Cinzel', serif;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
