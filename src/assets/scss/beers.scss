@@ -6,6 +6,8 @@
   .contentBeers{
     height: 50%;
     border-bottom: 1px solid red;
+    display: flex;
+    align-items: center;
     .imgLogo{
       height: 60%;
       position: relative;

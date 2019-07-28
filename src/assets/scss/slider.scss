@@ -1,0 +1,107 @@
+// .slick-slider{
+//     height: 80%;
+//     .slick-list{
+//         height: 100%;
+//         .slick-track{
+//             height: 100%;
+//             .slick-slide{
+//                 div{
+//                     height: 100%;
+//                     .slideBeer{
+//                         height: 100%;
+//                         display: flex !important;
+//                         justify-content: center;
+//                         align-items: center;
+//                         .descriptionBeer{
+//                             width: 50%;
+//                             display: flex;
+//                             justify-content: center;
+//                             align-items: center;
+//                             justify-content: center;
+//                         }
+//                         .imageBeer{
+//                             width: 50%;
+//                             display: flex;
+//                             justify-content: center;
+//                             align-items: center;
+//                             justify-content: center;
+//                             img{
+//                                 height: 100%;
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+.sliderBeers{
+    height: 80%;
+    width: 100%;
+    position: relative;
+    .slideBeer{
+        height: 70%;
+        width:40%;
+        position: absolute;
+        display: flex !important;
+        justify-content: center;
+        align-items: flex-start;
+        transition: 1s;
+        &[dataB='0']{
+            top: 30%;
+            left: 0;
+            z-index: 3;
+            // .descriptionBeer{
+            //     transition-delay: 1s;
+            //     display: block;
+            // }
+        }
+        &[dataB='1']{
+            top: 30%;
+            left: 60%;
+            z-index: 3;
+        }
+        &[dataB='2']{
+            top: 20%;
+            left: 50%;
+            z-index: 2;
+            height: 60%;
+        }
+        &[dataB='3']{
+            top: 20%;
+            left: 10%;
+            z-index: 2;
+            height: 60%;
+        }
+        .descriptionBeer{
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            display: none;
+        }
+        .imageBeer{
+            width: 60%;
+            height:100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            img{
+                height: 100%;
+                &.copa{
+                    height: 80%;
+                }
+            }
+        }
+    }
+}
+
+///Keyframes animations
+
+// @keyframes move3 {
+//     0%{ transform: translate3d(0%, 0%, 0px) }
+//     50%{ transform: translate3d(50%, 10%, 1px) }
+//     50%{ transform: translate3d(100%, 0%, 0px) }
+// }
