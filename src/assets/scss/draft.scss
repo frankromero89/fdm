@@ -1,0 +1,149 @@
+.containerDraft{
+  display: block;
+  .contentDraft{
+    height: 100%;
+    width: 100%;
+    .sectionDraft{
+      height: 60%;
+      width: 100%;
+      background-color: $black;
+      display: flex; 
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: relative;
+      .lineDraft{
+        width: 95%;
+        height: 50%;
+        position: absolute;
+        left: 2.5%;
+        bottom: 1em;
+      }
+      .sliderDraft{
+        width: 80%;
+        height: 73%;
+        margin: 0 auto;
+        .slick-slider{
+          height: 100%;
+          .slick-list{
+            height: 100%;
+            .slick-track{
+              height: 100%;
+              .slick-slide{
+                height: 100%;
+                > div{
+                  height: 100%;
+                  .maderal{
+                    height: 100%;
+                    display: flex !important;
+                    justify-content: center;
+                    align-items: flex-end;
+                    &:focus{
+                      outline: none;
+                    }
+                    .imgMaderal{
+                      height: 80%;
+                      width: auto;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .glassServed{
+        height: 20%;
+        position: relative;
+        transform:translateX(20%);
+        transition: .5s;
+      }
+    }
+    .sectionDescription{
+      height: 40%;
+      width: 100%;
+      background-image: url('../images/background_draft.jpg');
+      background-size: cover;
+      background-position: center bottom;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .infoBeer{
+        width: 80%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .logoBeer{
+          img{
+            width: auto;
+            height: auto;
+            max-width: 90%;
+            max-height: 90%;
+          }
+          width: 20%;
+        }
+        .descriptionBeer{
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          .titleDescription{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            h1{
+              margin:0;
+              font-size: 1.8em;
+              &.styleBeer{
+                margin-left: .8em;
+                margin-bottom: .05em;
+                font-size: 1.5em;
+              }
+            }
+          }
+          .detailsBeer{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 1em;
+            p{
+              font-size: 1.5em;
+              margin: 0;
+            }
+            .rankingBeer{
+              padding: 0;
+              margin: 0;
+              .circleRank{
+                display: inline-block;
+                list-style: none;
+                height: 1.5em;
+                width: 1.5em;
+                background-color: #c1c1c1;
+                border-radius: 50%;
+                margin:.5em;
+                overflow: hidden;
+                .fillCircle{
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+      .titleInfo{
+        height: 20%;
+        width: 100%;
+        background-color: $gold;
+        h3{
+          text-transform: uppercase;
+          font-weight: 400;
+          letter-spacing: .5em;
+        }
+      }
+    }
+  }
+}

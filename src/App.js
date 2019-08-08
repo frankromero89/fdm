@@ -9,6 +9,7 @@ import Food from './containers/Food'
 import Boobles from './containers/Boobles'
 import Branches from './containers/Branches'
 import Gallery from './containers/Gallery'
+import Draft from './containers/draft'
 
 import './assets/scss/index.scss'
 
@@ -19,6 +20,7 @@ function App() {
       <div style={{position:'relative',top:'5em'}}>
         <Cover />
         <Who />
+        <Draft />
         <Drinks />
         <Food />
         <Boobles />
