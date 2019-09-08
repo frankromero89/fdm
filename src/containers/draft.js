@@ -22,6 +22,18 @@ class draft extends Component {
     })
   }
 
+  componentDidMount(){
+    // window.addEventListener('scroll',function(e){
+    //   const totalW = window.innerHeight;
+    //   var scrolled = window.pageYOffset
+    //   const back = document.querySelector('.containerDraft')
+    //   let distanceBack = back.getBoundingClientRect().top
+    //   // if(distanceBack <= totalW){
+    //     back.style.top = `-${scrolled*.1}px`
+    //   // }
+    // })
+  }
+
   componentDidUpdate(prevProps, prevState){
     if(prevState.beers !== this.state.beers){
       const {rating} = this.state.beers[this.state.beerSelected]
@@ -29,7 +41,7 @@ class draft extends Component {
       setTimeout(()=>{moveGlass()},1000)
     }
     if(prevState.beerSelected !== this.state.beerSelected){
-      const {rating} = this.state.beers[this.state.beerSelected]     
+      const {rating} = this.state.beers[this.state.beerSelected]
       rankingBeer(rating)
       moveGlass()
     }
@@ -44,7 +56,7 @@ class draft extends Component {
     // console.log(this.state.beers)
     return (
       <div className='allView containerDraft'>
-        <DraftComp 
+        <DraftComp
           beers = {this.state.beers}
           handleMaderal={this.handleMaderal}
           selected={this.state.beerSelected}

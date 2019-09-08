@@ -11,10 +11,10 @@ export default draft = (props) => {
   const settings= {
     dots: false,
     infinite: false,
-    slidesToShow: 10, 
+    slidesToShow: 10,
     slidesToScroll: 1
   }
-  const beerCurrent = props.beers? props.beers[props.selected]: null; 
+  const beerCurrent = props.beers? props.beers[props.selected]: null;
   return (
     <div className='contentDraft'>
       <div className='sectionDraft'>
@@ -66,11 +66,9 @@ export default draft = (props) => {
               </div>
             </div>
           </div>
-          <div className='titleInfo'>
-            <h3>Menú de cervezas masaryk</h3>
-          </div>
+          <div className='titleInfo'></div>
         </div>
-      }  
+      }
     </div>
   );
 };

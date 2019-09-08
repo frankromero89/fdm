@@ -13,22 +13,24 @@ import Draft from './containers/draft'
 
 import './assets/scss/index.scss'
 
-function App() {
-  return (
-    <div className="App" style={{position:'relative'}}>
-      <Header />
-      <div style={{position:'relative',top:'5em'}}>
-        <Cover />
-        <Who />
-        <Draft />
-        <Drinks />
-        <Food />
-        <Boobles />
-        <Branches />
-        <Gallery />
+class App extends React.Component {
+  render(){
+    return (
+      <div className="App" style={{position:'relative'}}>
+        <Header />
+        <div style={{position:'relative',top:'5em'}}>
+          <Cover />
+          <Who />
+          <Draft />
+          <Drinks />
+          <Food />
+          <Boobles />
+          <Branches />
+          <Gallery />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

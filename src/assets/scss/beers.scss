@@ -5,21 +5,23 @@
   background-repeat: no-repeat;
   .contentBeers{
     height: 50%;
-    border-bottom: 1px solid red;
     display: flex;
     align-items: center;
+    position: relative;
     .imgLogo{
       height: 60%;
-      position: relative;
-      top:20%;
-    }
-    .imgDivide{
       position: absolute;
-      top: 50%;
+      top:20%;
       left: 50%;
-      transform: translate(-50%,-50%);
-      height: 15%;
+      transform: translateX(-50%)
     }
+  }
+  .imgDivide{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 15%;
   }
   .contentDrinks{
     position: relative;

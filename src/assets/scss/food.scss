@@ -1,13 +1,120 @@
 .containerFood{
-  background-image: url('../images/menusFood.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  .maskContainerFood{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    opacity: .8;
-    z-index: 1;
+  // background-image: url('../images/menusFood.jpg');
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  position: relative;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 40% 30% 30%;
+  .item{
+    .maskContainerFood{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      z-index: 1;
+      &:hover{
+        opacity: .7;
+      }
+    }
+  }
+  .itemBeer{
+    background-image: url('../images/beer_menu.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row-start: 1;
+    grid-row-end: span 3;
+    position: relative;
+  }
+  .itemMenu{
+    background-image: url('../images/menu.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    grid-column-start: 3;
+    grid-column-end: span 2;
+    grid-row-start: 1;
+    grid-row-end: span 1;
+    position: relative;
+  }
+  .itemHamburguer{
+    background-image: url('../images/hamburguesas_menu.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    grid-column-start: 5;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 1;
+    position: relative;
+  }
+  .itemchicken{
+    background-image: url('../images/especiales_menu.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    grid-column-start: 3;
+    grid-column-end: span 1;
+    grid-row-start: 2;
+    grid-row-end: span 1;
+    position: relative;
+  }
+  .itemSalad{
+    background-image: url('../images/ensalada_menu.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    grid-column-start: 4;
+    grid-column-end: span 1;
+    grid-row-start: 2;
+    grid-row-end: span 1;
+    position: relative;
+  }
+  .itemPasta{
+    background-image: url('../images/pastas_menu.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    grid-column-start: 5;
+    grid-column-end: span 1;
+    grid-row-start: 2;
+    grid-row-end: span 1;
+    position: relative;
+  }
+  .itemPostres{
+    background-image: url('../images/postres_menu.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    grid-column-start: 3;
+    grid-column-end: span 1;
+    grid-row-start: 3;
+    grid-row-end: span 1;
+    position: relative;
+  }
+  .itemCoffe{
+    background-image: url('../images/sopas_menu.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    grid-column-start: 4;
+    grid-column-end: span 1;
+    grid-row-start: 3;
+    grid-row-end: span 1;
+    position: relative;
+  }
+  .itemTaco{
+    background-image: url('../images/entradas_menu.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    grid-column-start: 5;
+    grid-column-end: span 1;
+    grid-row-start: 3;
+    grid-row-end: span 1;
+    position: relative;
   }
   .contentFood{
     position: relative;
@@ -56,6 +163,52 @@
             background-color: #bc8049a6;
           }
         }
+      }
+    }
+  }
+  //menus
+  .containerMenu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    display: flex;
+    padding: 0;
+    &.active{
+      z-index:4;
+    }
+    .imgMenu,
+    .menu{
+      height: 100%;
+      width: 50%;
+      transition: .5s;
+    }
+    .imgMenu{
+      background-image: url('../images/hamburguesa_img.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      transform: translateX(-100%);
+      &.active{
+        transform: translateX(0);
+      }
+    }
+    .menu{
+      background-image: url('../images/hamburguesa_menu.jpg');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      transform: translateX(100%);
+      position: relative;
+      &.active{
+        transform: translateX(0);
+      }
+      .feather{
+        position: absolute;
+        top: 8%;
+        right: 2%;
+        color: $gold;
       }
     }
   }
