@@ -17,7 +17,7 @@ class Cervezas extends Component {
   // }
   render() {
     return (
-      <div className='allView containerDrinks'>
+      <div className='allView containerDrinks parallax'>
         <BeerCont />
         <img className='imgDivide' src={ImgDivide}/>
         <DrinksCont />

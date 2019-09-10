@@ -22,21 +22,39 @@ export default cervezas = (props) => {
     for(let i = 0; i < bottles.length; i ++ ){
       const isActive = bottles[i].classList.contains('active');
       const nameImg = bottles[i].getAttribute('dataImg');
+      const $description = document.getElementById('descriptionBeer')
+      const $titleDescription = document.getElementById('titleDescription')
       switch (nameImg) {
         case 'pinta':
-          if(isActive) bottles[i].setAttribute('src',pintaActive);
-          else bottles[i].setAttribute('src',pinta);
+          if(isActive){
+            console.log($description)
+            bottles[i].setAttribute('src',pintaActive)
+            $titleDescription.innerHTML = 'pinta'
+            $description.innerHTML = 'Este tipo de vaso es uno de los vasos más utilizados en los pubs ingleses. Su forma de cono invertido con un ensanchamiento cerca del borde permite la formación de una espuma cremosa. <br /> <span>Tipo de cerveza: </span> Red Ale, Porter, IPA, Stout, entre otros... '
+          }else bottles[i].setAttribute('src',pinta);
           break;
         case 'tarro':
-          if(isActive) bottles[i].setAttribute('src',tarroActive);
+          if(isActive){
+            bottles[i].setAttribute('src',tarroActive);
+            $titleDescription.innerHTML = 'tarro'
+            $description.innerHTML = 'Son robustos, de vidrio grueso y lisos o de gran capacidad y con un asa que impide que el calor de la mano caliente la cerveza. Están pensadas para poder chocarlas a la hora de brindar. <br /> <span>Tipo de cerveza: </span> Drunke, Bock, Vienna, entre otros... '
+          }
           else bottles[i].setAttribute('src',tarro);
           break;
         case 'copa':
-          if(isActive) bottles[i].setAttribute('src',copaActive);
+          if(isActive){
+            bottles[i].setAttribute('src',copaActive);
+            $titleDescription.innerHTML = 'copa'
+            $description.innerHTML = 'La parte superior se estrecha hacia adentro para potenciar y capturar los aromas. El vaso destaca la espuma de las cevezas con cuerpo y fuerte, con más de 8% de alcohol. <br /> <span>Tipo de cerveza: </span> Belgian Strong Ale, Dubbel, Tripel, Lambrica, entre otros...'
+          }
           else bottles[i].setAttribute('src',copa);
           break;
         case 'stout':
-          if(isActive) bottles[i].setAttribute('src',stoutActive);
+          if(isActive){
+            bottles[i].setAttribute('src',stoutActive);
+            $titleDescription.innerHTML = 'flauta'
+            $description.innerHTML = 'El vaso es estrecho en la parte inferior y ligeramente más ancho en la parte superior, debido a su forma alargada, atrapa fácilmente el aroma y es visualmente muy agradable. <br /> <span>Tipo de cerveza: </span> Weizen, Witbier, German Pilsner, Pale Lager, entre otros... '
+          }
           else bottles[i].setAttribute('src',stout);
           break;
         default:
@@ -49,10 +67,15 @@ export default cervezas = (props) => {
   return (
     <div className='contentBeers'>
       <div className='descriptionBeerContainer'>
-        <h1 className='titleDescriptionBeer'>Title Beer</h1>
-        <p className='descriptionBeer'>
-          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,
+        <span className='first'></span>
+        <h1 className='titleDescriptionBeer' id='titleDescription'>pinta</h1>
+        <p className='descriptionBeer' id='descriptionBeer'>
+          Este tipo de vaso es uno de los vasos más utilizados en los pubs ingleses.
+          Su forma de cono invertido con un ensanchamiento cerca del borde permite la
+          formación de una espuma cremosa. <br /> <span>Tipo de cerveza: </span>
+          Red Ale, Porter, IPA, Stout, entre otros...
         </p>
+        <span className='last'></span>
       </div>
       <button className='moveSlider' onClick={async()=>{ await moveSlider('left'); typeImg() }}>
         <FeatherIcon icon="chevron-left" size='30'/>
@@ -63,7 +86,7 @@ export default cervezas = (props) => {
             <img className='beer active' onClick={()=>typeImg('pinta')} dataImg='pinta' src={pintaActive} />
           </div>
         </div>
-        <div className='slideBeer' dataB='1'>
+        <div className='slideBeer tarro' dataB='1'>
           <div className='imageBeer'>
             <img className='beer' dataImg='tarro' src={tarro} />
           </div>

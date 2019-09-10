@@ -3,7 +3,7 @@ import GalleryComp from '../components/gallery'
 class Gallery extends Component {
   render() {
     return (
-      <div className='containerGallery allView'>
+      <div className='containerGallery allView parallax'>
         <GalleryComp />
       </div>
     );

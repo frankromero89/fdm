@@ -1,35 +1,98 @@
-.containerHeader{
-  height: 4em;
-  padding: .5em;
-  display: flex;
-  background-color: #1d1d1d;
-  justify-content: space-between;
-  align-items: center;
+.globalHeaderContainer{
+  background-color: transparent;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  z-index: 5;
-  .logoContainer{
-    height: 100%;
-    width: 20%;
-    img{
-      height: 90%;
-      border: 1px solid #fff;
-      border-radius: 8px;
+  z-index: 9;
+  .feather{
+    margin-top: 1em;
+    margin-left: 1em;
+    position: relative;
+    color: $gold;
+    display: none;
+    @include mq($mobile){
+      display: block;
     }
   }
-  .headerOptions{
-    color: #fff;
-    width: 80%;
-    .optionsHeader{
-      list-style: none;
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-      font-size: .7em;
-      text-transform: uppercase;
+  .containerHeader{
+    height: 4em;
+    padding: .5em;
+    display: flex;
+    background-color: #1d1d1d;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    transition: .5s;
+    z-index: 5;
+    @include mq($mobile){
       padding: 0;
+      height: 100vh;
+      width: 70%;
+      left: -100%;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      &.visible{
+        top: 0 !important;
+        left: 0;
+      }
+      &.hidden{
+        top: 0 !important;
+      }
+    }
+    .feather{
+      position: absolute;
+      top:.5em;
+      right: .5em;
+    }
+    .logoContainer{
+      height: 100%;
+      width: 20%;
+      img{
+        height: 90%;
+        border: 1px solid #fff;
+        border-radius: 8px;
+      }
+      @include mq($mobile){
+        margin-top: 1em;
+        margin-left: 2em;
+        height: 10%;
+        width: auto;
+      }
+    }
+    .headerOptions{
+      color: #fff;
+      width: 80%;
+      .optionsHeader{
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        font-size: .7em;
+        text-transform: uppercase;
+        padding: 0;
+      }
+      @include mq($mobile){
+         height: 80%;
+         margin-left: 2em;
+        .optionsHeader{
+          flex-direction: column;
+          align-items: flex-start;
+          li{
+            font-size: 2em;
+            text-align: left;
+            margin: .5em 0;
+          }
+        }
+      }
+    }
+    &.visible{
+      top: 0;
+    }
+    &.hidden{
+      top: -110%;
     }
   }
 }

@@ -1,7 +1,7 @@
 .containerBoobles{
   background-image: url('../images/boobles.jpg');
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   .contentBoobles{
     height: 100%;
     width: 100%;
@@ -27,14 +27,6 @@
     .containerAnimBoobles{
       height: 80%;
       position: relative;
-      .simpleBooble{
-        height: 2em;
-        width: 2em;
-        border-radius: 50%;
-        position: absolute;
-        bottom: 5%;
-        left: 5%;
-      }
       .booble{
         border-radius: 50%;
         border: 2px solid #fff;
@@ -78,6 +70,50 @@
             }
           }
         }
+      }
+    }
+  }
+  .boobleMoving{
+    .simpleBooble{
+      height: 1em;
+      width: 1em;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      left: 5%;
+      border: 2px solid #f1f1f1;
+      opacity: .7;
+      animation: moveBooble 2.5s infinite;
+      -webkit-animation: moveBooble 2.5s infinite;
+      &:nth-child(2){
+        left: 30%;
+        animation: moveBooble 3s infinite;
+        -webkit-animation: moveBooble 3s infinite;
+      }
+      &:nth-child(3){
+        left: 50%;
+        animation: moveBooble 4s infinite;
+        -webkit-animation: moveBooble 4s infinite;
+      }
+      &:nth-child(4){
+        left: 70%;
+        animation: moveBooble 2s infinite;
+        -webkit-animation: moveBooble 2s infinite;
+      }
+      &:nth-child(5){
+        left: 90%;
+        animation: moveBooble 3.5s infinite;
+        -webkit-animation: moveBooble 3.5s infinite;
+      }
+      &:nth-child(6){
+        left: 15%;
+        animation: moveBooble 3.8s infinite;
+        -webkit-animation: moveBooble 3.8s infinite;
+      }
+      @keyframes moveBooble {
+        0% {bottom: -10%}
+        100% {bottom: 110%}
       }
     }
   }

@@ -3,18 +3,25 @@
   // background-repeat: no-repeat;
   // background-size: cover;
   position: relative;
+  z-index: 3;
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: 40% 30% 30%;
   .item{
     .maskContainerFood{
       position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100%;
       width: 100%;
       opacity: 0;
       z-index: 1;
       &:hover{
-        opacity: .7;
+        opacity: .8;
+      }
+      h1{
+        color: #fff;
       }
     }
   }
@@ -116,51 +123,75 @@
     grid-row-end: span 1;
     position: relative;
   }
-  .contentFood{
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    height: 70%;
-    width: 40%;
-    z-index: 2;
-    .maskFoodContent{
+  .dimmerMenu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: $brownD;
+    opacity: .9;
+    .contentFood{
       position: absolute;
-      height: 100%;
-      width: 100%;
-      opacity: .7;
-      z-index: 1;
-    }
-    .selectFood{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      .titles{
-        z-index: 2;
-        position: relative;
-        .titleSection{
-          margin: .5em 0 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      height: 70%;
+      width: 40%;
+      z-index: 2;
+      @include mq($mobile){
+        width: 90%;
+        .selectFood{
+          width: 90%;
+          margin: 0 auto;
+          .buttons{
+            width: 100% !important;
+            .buttonFood{
+              width: 48%;
+              font-size: 1.5em !important;
+            }
+          }
         }
-        .subtitle{ color: #4c3a25}
       }
-      .buttons{
+      .maskFoodContent{
+        position: absolute;
+        height: 100%;
+        width: 100%;
         z-index: 2;
-        position: relative;
-        margin-top: 10%;
-        width: 70%;
+        opacity: 1;
+      }
+      .selectFood{
         display: flex;
-        justify-content: space-between;
-        .buttonFood{
-          background-color: transparent;
-          padding: .5em 1em;
-          border: none;
-          font-size: 2em;
-          font-family: 'Cinzel', serif;
-          font-weight: bold;
-          &:hover{
-            background-color: #bc8049a6;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        .titles{
+          z-index: 2;
+          position: relative;
+          .titleAnimate{
+            margin: .5em 0 0;
+          }
+          .subtitle{ color: #4c3a25}
+        }
+        .buttons{
+          z-index: 2;
+          position: relative;
+          margin-top: 10%;
+          width: 70%;
+          display: flex;
+          justify-content: space-between;
+          .buttonFood{
+            background-color: transparent;
+            padding: .5em 1em;
+            border: none;
+            font-size: 2em;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            &:hover{
+              background-color: #bc8049a6;
+            }
           }
         }
       }
@@ -186,7 +217,6 @@
       transition: .5s;
     }
     .imgMenu{
-      background-image: url('../images/hamburguesa_img.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
@@ -196,7 +226,6 @@
       }
     }
     .menu{
-      background-image: url('../images/hamburguesa_menu.jpg');
       background-size: 100% 100%;
       background-repeat: no-repeat;
       transform: translateX(100%);

@@ -14,7 +14,7 @@ class Cover extends Component {
 
   render() {
     return (
-      <div className="containerCover">
+      <div className="containerCover allView">
         <CoverComp />
       </div>
     );

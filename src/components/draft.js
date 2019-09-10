@@ -1,4 +1,5 @@
 import React from 'react';
+import FeatherIcon from 'feather-icons-react'
 
 import lineDraft from '../assets/images/draft-line.png'
 import maderal1 from '../assets/images/maderal1.png'
@@ -12,11 +13,24 @@ export default draft = (props) => {
     dots: false,
     infinite: false,
     slidesToShow: 10,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive:[
+      {
+        breakpoint: 600,
+        settings:{
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        }
+      }
+    ]
   }
   const beerCurrent = props.beers? props.beers[props.selected]: null;
   return (
-    <div className='contentDraft'>
+    <div className={`contentDraft ${props.showDraft?'visible':''}`}>
+      <FeatherIcon
+        icon='x-circle' size={30}
+        onClick={props.hiddenDraft}
+      />
       <div className='sectionDraft'>
         <img className='lineDraft' src={lineDraft} alt='line-draft'/>
         <div className='sliderDraft'>
@@ -66,7 +80,9 @@ export default draft = (props) => {
               </div>
             </div>
           </div>
-          <div className='titleInfo'></div>
+          <div className='titleInfo'>
+            <h1>Menú de cervezas masaryk</h1>
+          </div>
         </div>
       }
     </div>

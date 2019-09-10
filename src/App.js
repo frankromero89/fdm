@@ -18,7 +18,7 @@ class App extends React.Component {
     return (
       <div className="App" style={{position:'relative'}}>
         <Header />
-        <div style={{position:'relative',top:'5em'}}>
+        <div style={{position:'relative'}}>
           <Cover />
           <Who />
           <Draft />

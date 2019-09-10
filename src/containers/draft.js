@@ -12,6 +12,7 @@ class draft extends Component {
     this.state={
       beers: null,
       beerSelected: 0,
+      showDraft: false
     }
   }
 
@@ -32,18 +33,21 @@ class draft extends Component {
     //     back.style.top = `-${scrolled*.1}px`
     //   // }
     // })
+    setTimeout(()=>{moveGlass()},1000)
   }
 
   componentDidUpdate(prevProps, prevState){
-    if(prevState.beers !== this.state.beers){
-      const {rating} = this.state.beers[this.state.beerSelected]
-      rankingBeer(rating)
-      setTimeout(()=>{moveGlass()},1000)
-    }
-    if(prevState.beerSelected !== this.state.beerSelected){
-      const {rating} = this.state.beers[this.state.beerSelected]
-      rankingBeer(rating)
-      moveGlass()
+    if(this.state.showDraft){
+      if(prevState.beers !== this.state.beers){
+        const {rating} = this.state.beers[this.state.beerSelected]
+        rankingBeer(rating)
+        setTimeout(()=>{moveGlass()},1000)
+      }
+      if(prevState.beerSelected !== this.state.beerSelected){
+        const {rating} = this.state.beers[this.state.beerSelected]
+        rankingBeer(rating)
+        moveGlass()
+      }
     }
   }
 
@@ -53,14 +57,19 @@ class draft extends Component {
   }
 
   render() {
-    // console.log(this.state.beers)
     return (
-      <div className='allView containerDraft'>
-        <DraftComp
-          beers = {this.state.beers}
-          handleMaderal={this.handleMaderal}
-          selected={this.state.beerSelected}
-        />
+      <div className='containerDraft'>
+          <DraftComp
+            beers = {this.state.beers}
+            handleMaderal={this.handleMaderal}
+            selected={this.state.beerSelected}
+            showDraft={this.state.showDraft}
+            hiddenDraft={()=>this.setState({showDraft:false})}
+          />
+        <div className='titleInfo'
+          onClick={() => this.setState({showDraft: true})}>
+          <h1>Menu de cervezas masaryk</h1>
+        </div>
       </div>
     );
   }

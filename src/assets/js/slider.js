@@ -6,9 +6,9 @@ export async function moveSlider(direction){
             const imgItem = await sliders[i].querySelector('.beer')
             let newData = dataCurrent!=0? dataCurrent - 1 : 3;
             sliders[i].setAttribute('dataB',newData);
-            if(newData == 3 && imgItem.getAttribute('dataImg') == 'tarro'){
+            if((newData == 3 && imgItem.getAttribute('dataImg') == 'tarro') || (newData == 0 && imgItem.getAttribute('dataImg') == 'tarro')){
               sliders[1].classList.add('tarro')
-            }else if(newData != 3 && imgItem.getAttribute('dataImg') == 'tarro'){
+            }else if((newData != 3 && imgItem.getAttribute('dataImg') == 'tarro') || newData != 0 && imgItem.getAttribute('dataImg') == 'tarro'){
               sliders[1].classList.remove('tarro')
             }
             if(newData == 0){

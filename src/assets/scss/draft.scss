@@ -1,8 +1,23 @@
 .containerDraft{
   display: block;
   .contentDraft{
-    height: 100%;
-    width: 100%;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 100%;
+    left:0;
+    z-index: 5;
+    transition: .8s;
+    &.visible{
+      top: 0;
+    }
+    .feather{
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      color: $gold;
+      z-index: 6;
+    }
     .sectionDraft{
       height: 60%;
       width: 100%;
@@ -86,7 +101,7 @@
           text-align: right;
         }
         .descriptionBeer{
-          width: 80%;
+          width: 90%;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -135,14 +150,62 @@
             }
           }
         }
+        .titleInfo{
+          height: 10%;
+          width: 100%;
+          background-color: $gold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          h1{
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: 400;
+            letter-spacing: .5em;
+          }
+        }
+        @include mq($mobile){
+          width: 90%;
+          .descriptionBeer{
+            margin-left: .5em;
+            .titleDescription{
+              flex-wrap: wrap;
+              h1{
+                font-size: .9em;
+                &.styleBeer{
+                  font-size: .8em;
+                }
+              }
+            }
+            .detailsBeer{
+              p{
+                font-size: 1.2em;
+              }
+            }
+          }
+        }
       }
-      .titleInfo{
-        height: 20%;
-        width: 100%;
-        background-image: url('../images/pleca_menu.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
+    }
+  }
+  .titleInfo{
+    height: 3em;
+    width: 100%;
+    background-color: $gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    h1{
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: 400;
+      letter-spacing: .5em;
+    }
+    position: relative;
+    @include mq($mobile){
+      h1{ font-size: .9em;}
     }
   }
 }

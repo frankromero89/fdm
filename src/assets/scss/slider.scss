@@ -1,12 +1,71 @@
 .contentBeers{
   padding: 0 1em;
+  @include mq($mobile){
+    padding: 0;
+  }
   .descriptionBeerContainer{
     position: absolute;
     top: 5%;
     left: 2%;
     width: 20%;
+    padding: .5em 1em;
+    @include mq($mobile){
+      width: 80%;
+      .titleDescriptionBeer{
+        font-size: 1em;
+      }
+    }
+    .titleDescriptionBeer{
+      margin-top: 0;
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
     .descriptionBeer{
-      text-align: center;
+      text-align: left;
+      font-size: .8em;
+      span{
+        font-weight: bold;
+      }
+    }
+    .first{
+      &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $gold;
+        height: 2em;
+        width: 2px;
+      }
+      &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $gold;
+        height: 2px;
+        width: 3em;
+      }
+    }
+    .last{
+      &::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: $gold;
+        height: 2em;
+        width: 2px;
+      }
+      &::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: $gold;
+        height: 2px;
+        width: 3em;
+      }
     }
   }
   .sliderBeers{
@@ -72,6 +131,46 @@
         }
       }
     }
+    @include mq($mobile){
+      margin-top: 2em;
+      .slideBeer{
+        height: 50%;
+        justify-content: center;
+        &[dataB='0']{
+          left: -5%;
+          &.tarro{
+            left: 0%;
+          }
+        }
+        &[dataB='1']{
+          left: 56%;
+        }
+        &[dataB='2']{
+          left: 55%;
+          height: 40%;
+        }
+        &[dataB='3']{
+          left: 0%;
+          height: 40%;
+        }
+        .imageBeer{
+          width: auto;
+          img{
+            height: 90%;
+            width: auto;
+          }
+        }
+      }
+    }
+    @include mq(450px){
+      .slideBeer{
+        .imageBeer{
+          img{
+            height: 70% !important;
+          }
+        }
+      }
+    }
   }
   .moveSlider{
     border: none;
@@ -82,6 +181,9 @@
     top: 20%;
     &:focus{
       outline: none;
+    }
+    @include mq($mobile){
+      top: 30%;
     }
   }
 }
