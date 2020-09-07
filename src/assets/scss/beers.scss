@@ -1,7 +1,7 @@
 .containerDrinks{
   height: 200vh;
   background-image: url('../images/beers.jpg');
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   .contentBeers{
     height: 50%;
@@ -17,7 +17,7 @@
       z-index: 1;
       @include mq($mobile){
         top: 30%;
-        height: 40%;
+        height: 30%;
       }
     }
   }
@@ -27,21 +27,5 @@
     left: 50%;
     transform: translate(-50%,-50%);
     height: 15%;
-  }
-  .contentDrinks{
-    position: relative;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .imgDrinks{
-      position: relative;
-      margin-top: 8%;
-      height: 50%;
-    }
-    .titleSection{
-      display: block;
-    }
   }
 }

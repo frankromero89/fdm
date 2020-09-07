@@ -1,0 +1,62 @@
+.contentDrinks{
+    position: relative;
+    height: 80vh;
+    margin-top: 7em;
+    @include mq($mobile){
+        margin-top: 0;
+        height: 100vh;
+    }
+    .containerMenus{
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include mq($mobile){
+            height: 95%;
+            flex-direction: column;
+        }
+        .menuOne,
+        .menuTwo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+            width: 20%;
+            .titleAnimate{
+                margin-bottom: 2em;
+                @include mq($mobile){
+                    .titleSection{
+                        font-size: 1em;
+                    }
+                };
+            }
+            .drinksName{
+                .titleDrinks{
+                    margin: 0 0 1em;
+                }
+                overflow-y: auto;
+                overflow-x: hidden;
+                p{
+                    font-size: 1em;
+                }
+            }
+            @include mq($mobile){
+                height: 25%;
+                width: auto;
+            }
+        }
+        .containerImageDrink{
+            height: 100%;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            img{
+                height: 100%;
+            }
+            @include mq($mobile){
+                height: 50%;
+            }
+        }
+    }
+}

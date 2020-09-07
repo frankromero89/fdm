@@ -10,6 +10,10 @@ import Boobles from './containers/Boobles'
 import Branches from './containers/Branches'
 import Gallery from './containers/Gallery'
 import Draft from './containers/draft'
+import Promos from './containers/Promos'
+import Test from './containers/test'
+import NetBar from './containers/network-bar'
+import Logof from './assets/images/logof.png'
 
 import './assets/scss/index.scss'
 
@@ -18,15 +22,26 @@ class App extends React.Component {
     return (
       <div className="App" style={{position:'relative'}}>
         <Header />
+        <NetBar />
         <div style={{position:'relative'}}>
           <Cover />
           <Who />
           <Draft />
           <Drinks />
           <Food />
-          <Boobles />
+          <Promos />
+          {/*<Boobles />*/}
           <Branches />
-          <Gallery />
+          {/* <Gallery /> */}
+          {/*}<Test />*/}
+        </div>
+        <div className='footer'>
+            <div className='contFooter'>
+                <p>Facturacion</p>
+                <span className='gold ml1 mr1'>|</span>
+                <p>Cuentanos tu experiencia</p>
+            </div>
+            <img src={Logof}/>
         </div>
       </div>
     );

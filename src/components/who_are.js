@@ -10,17 +10,13 @@ export default who_are = (props) => {
         <h3 className='subtitle'>Pasión por la cerveza Artesanal</h3>
       </div>
 
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-       dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-       book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-        publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <p>Fiebre de Malta es la casa de la Cerveza Artesanal en México, donde podrás disfrutar la más amplia variedad de Cervezas de
+          Barril con la mejor calidad del mercado, complementada por una cuidadosa selección de cervezas embotelladas artesanales
+          mexicanas y extranjeras, ofreciéndote una increíble experiencia en lo que es nuestra pasión: La Buena Cerveza.</p>
         <br />
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-       dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-       book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-        publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p>Contamos con la más sofisticada instalación en México, donde podrás observar la cámara de refrigeración,
+            las mezcladoras de Nitrógeno y CO2 y la impresionante torre con 24 salidas en Lerma y 36 salidas en Masaryk,
+            que nos distingue de cualquier otro lugar.</p>
     </div>
   );
 };

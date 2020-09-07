@@ -1,0 +1,107 @@
+.containerPromos{
+    background-color: #000;
+    padding-top: 5em;
+    .titleSection{
+        color: $white;
+    }
+    .slick-slider{
+        height: 75%;
+        width: 80%;
+        margin: 0 auto;
+        .slick-list{
+            height: 100%;
+            .slick-track{
+                height: 100%;
+                .slick-slide{
+                    height: 100%;
+                    opacity: 0;
+                    transform: translateY(-50%);
+                    div{
+                        height: 100%;
+                        .promo{
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            padding: 3em 5em 2em;
+                            &:focus{
+                                outline: none;
+                            }
+                            .containerImg{
+                                width: 100%;
+                                height: 50%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                img{
+                                    width: 100%;
+                                    height: auto;
+                                    max-height: 100%;
+                                    &.vasos{
+                                        width: 60%;
+                                    }
+                                    &.pinta{
+                                        height: 100%;
+                                        width: auto;
+                                        max-width: 100%;
+                                    }
+                                }
+                            }
+                            .textPromos{
+                                width: 100%;
+                                height: 50%;
+                                .namePromo{
+                                    text-decoration: underline;
+                                    text-decoration-color: $gold;
+                                    text-underline-position: under;
+                                }
+                                .promoInfo{
+                                    opacity: 0;
+                                    transition: .5s;
+                                    h3{
+                                        margin-bottom: 0;
+                                    }
+                                    p{ margin: 0; }
+                                }
+                            }
+                            &:hover{
+                                .textPromos{
+                                    .promoInfo{ opacity: 1 }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .slick-dots{
+            li{
+                background-color: #f1f1f1;
+                border-radius: 50%;
+                &.slick-active{
+                    background-color: $gold;
+                }
+                button{
+                    opacity: 0;
+                }
+            }
+        }
+        &.animate{
+            .slick-list{
+                .slick-track{
+                    .slick-active{
+                        opacity: 1;
+                        transform: translateY(0);
+                        &[data-index="0"]{transition: .6s;}
+                        &[data-index="1"]{transition: .6s;transition-delay: .3s}
+                        &[data-index="2"]{transition: .6s;transition-delay: .7s}
+                        &[data-index="3"]{transition: .6s;transition-delay: .3s}
+                        &[data-index="4"]{transition: .6s;transition-delay: .7s}
+                    }
+                }
+            }
+        }
+    }
+}

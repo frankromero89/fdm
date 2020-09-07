@@ -11,6 +11,8 @@
     padding: .5em 1em;
     @include mq($mobile){
       width: 80%;
+      left: 50%;
+      transform: translateX(-50%);
       .titleDescriptionBeer{
         font-size: 1em;
       }
@@ -69,12 +71,13 @@
     }
   }
   .sliderBeers{
+      margin-top: 4em;
     height: 80%;
     width: 100%;
     position: relative;
     .slideBeer{
       height: 70%;
-      width:40%;
+      width:fit-content;
       position: absolute;
       display: flex !important;
       justify-content: center;
@@ -82,8 +85,12 @@
       transition: 1s;
       &[dataB='0']{
           top: 30%;
-          left: 5%;
+          left: 20%;
           z-index: 3;
+          &.pinta,
+          &.stout{
+              left: 25%;
+          }
           // .descriptionBeer{
           //     transition-delay: 1s;
           //     display: block;
@@ -96,9 +103,12 @@
       }
       &[dataB='2']{
           top: 20%;
-          left: 50%;
+          left: 70%;
           z-index: 2;
           height: 60%;
+          &.copa{
+            left: 75%;
+          }
       }
       &[dataB='3']{
           top: 20%;
@@ -118,7 +128,7 @@
           display: none;
       }
       .imageBeer{
-        width: 60%;
+        width: fit-content;
         height:100%;
         display: flex;
         justify-content: center;
@@ -127,6 +137,9 @@
           height: 100%;
           &.copa{
             height: 80%;
+          }
+          &.tarro{
+            height: 70%;
           }
         }
       }
@@ -137,21 +150,27 @@
         height: 50%;
         justify-content: center;
         &[dataB='0']{
-          left: -5%;
+          left: 10%;
+          &.stout,
+          &.pinta{
+            left: 10%;
+          }
           &.tarro{
-            left: 0%;
+            left: 2%;
           }
         }
         &[dataB='1']{
-          left: 56%;
+          left: 60%;
         }
         &[dataB='2']{
           left: 55%;
           height: 40%;
+          opacity: 0;
         }
         &[dataB='3']{
           left: 0%;
           height: 40%;
+          opacity: 0;
         }
         .imageBeer{
           width: auto;

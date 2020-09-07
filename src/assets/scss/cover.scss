@@ -1,10 +1,18 @@
+@import "variables.scss";
+
 .containerCover{
-  .coverContent{
-    background-image: url('../images/video-placeholder.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 101.5%;
-    width: 100%;
-  }
+    background-color: $black;
+    .coverContent{
+        height: 100%;
+        width: 100vw;
+        position:relative;
+        overflow:hidden;
+        .videoFdm{
+            height:100%;
+        	width:100%;
+        	position:absolute;
+        	top:0;
+        	left:0;
+        }
+    }
 }

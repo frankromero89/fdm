@@ -8,6 +8,13 @@
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: 40% 30% 30%;
   .item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{
+          max-width: 100%;
+          max-height: 100%;
+      }
     .maskContainerFood{
       position: absolute;
       display: flex;
@@ -21,6 +28,7 @@
         opacity: .8;
       }
       h1{
+        font-size: 1.5em;
         color: #fff;
       }
     }
@@ -47,10 +55,11 @@
     position: relative;
   }
   .itemHamburguer{
-    background-image: url('../images/hamburguesas_menu.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    // background-image: url('../images/hamburguesas_menu.png');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center center;
+    background-color: #491100;
     grid-column-start: 5;
     grid-column-end: span 1;
     grid-row-start: 1;
@@ -58,10 +67,11 @@
     position: relative;
   }
   .itemchicken{
-    background-image: url('../images/especiales_menu.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
+    // background-image: url('../images/especiales_menu.png');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: top center;
+    background-color: #93120C;
     grid-column-start: 3;
     grid-column-end: span 1;
     grid-row-start: 2;
@@ -69,10 +79,11 @@
     position: relative;
   }
   .itemSalad{
-    background-image: url('../images/ensalada_menu.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    // background-image: url('../images/ensalada_menu.png');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center center;
+    background-color: #702B02;
     grid-column-start: 4;
     grid-column-end: span 1;
     grid-row-start: 2;
@@ -80,10 +91,11 @@
     position: relative;
   }
   .itemPasta{
-    background-image: url('../images/pastas_menu.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    // background-image: url('../images/pastas_menu.png');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center center;
+    background-color: #FF9800;
     grid-column-start: 5;
     grid-column-end: span 1;
     grid-row-start: 2;
@@ -91,10 +103,11 @@
     position: relative;
   }
   .itemPostres{
-    background-image: url('../images/postres_menu.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    // background-image: url('../images/postres_menu.png');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center center;
+    background-color: #2B0B04;
     grid-column-start: 3;
     grid-column-end: span 1;
     grid-row-start: 3;
@@ -102,10 +115,11 @@
     position: relative;
   }
   .itemCoffe{
-    background-image: url('../images/sopas_menu.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    // background-image: url('../images/sopas_menu.png');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center center;
+    background-color: #BE3700;
     grid-column-start: 4;
     grid-column-end: span 1;
     grid-row-start: 3;
@@ -113,90 +127,92 @@
     position: relative;
   }
   .itemTaco{
-    background-image: url('../images/entradas_menu.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    // background-image: url('../images/entradas_menu.png');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center center;
+    background-color: #B74F00;
     grid-column-start: 5;
     grid-column-end: span 1;
     grid-row-start: 3;
     grid-row-end: span 1;
     position: relative;
   }
-  .dimmerMenu{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    background-color: $brownD;
-    opacity: .9;
-    .contentFood{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      height: 70%;
-      width: 40%;
-      z-index: 2;
-      @include mq($mobile){
-        width: 90%;
-        .selectFood{
-          width: 90%;
-          margin: 0 auto;
-          .buttons{
-            width: 100% !important;
-            .buttonFood{
-              width: 48%;
-              font-size: 1.5em !important;
-            }
-          }
-        }
-      }
-      .maskFoodContent{
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        z-index: 2;
-        opacity: 1;
-      }
-      .selectFood{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        .titles{
-          z-index: 2;
-          position: relative;
-          .titleAnimate{
-            margin: .5em 0 0;
-          }
-          .subtitle{ color: #4c3a25}
-        }
-        .buttons{
-          z-index: 2;
-          position: relative;
-          margin-top: 10%;
-          width: 70%;
-          display: flex;
-          justify-content: space-between;
-          .buttonFood{
-            background-color: transparent;
-            padding: .5em 1em;
-            border: none;
-            font-size: 2em;
-            font-family: 'Cinzel', serif;
-            font-weight: bold;
-            &:hover{
-              background-color: #bc8049a6;
-            }
-          }
-        }
-      }
-    }
-  }
+  // .dimmerMenu{
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   height: 100%;
+  //   width: 100%;
+  //   z-index: 1;
+  //   background-color: $brownD;
+  //   opacity: .9;
+  //   .contentFood{
+  //     position: absolute;
+  //     top: 50%;
+  //     left: 50%;
+  //     transform: translate(-50%,-50%);
+  //     height: 70%;
+  //     width: 40%;
+  //     z-index: 2;
+  //     @include mq($mobile){
+  //       width: 90%;
+  //       .selectFood{
+  //         width: 90%;
+  //         margin: 0 auto;
+  //         .buttons{
+  //           width: 100% !important;
+  //           .buttonFood{
+  //             width: 48%;
+  //             font-size: 1.5em !important;
+  //           }
+  //         }
+  //       }
+  //     }
+  //     .maskFoodContent{
+  //       position: absolute;
+  //       height: 100%;
+  //       width: 100%;
+  //       z-index: 2;
+  //       opacity: 1;
+  //     }
+  //     .selectFood{
+  //       display: flex;
+  //       flex-direction: column;
+  //       align-items: center;
+  //       justify-content: center;
+  //       height: 100%;
+  //       .titles{
+  //         z-index: 2;
+  //         position: relative;
+  //         .titleAnimate{
+  //           margin: .5em 0 0;
+  //         }
+  //         .subtitle{ color: #4c3a25}
+  //       }
+  //       .buttons{
+  //         z-index: 2;
+  //         position: relative;
+  //         margin-top: 10%;
+  //         width: 70%;
+  //         display: flex;
+  //         flex-wrap: wrap;
+  //         justify-content: space-around;
+  //         .buttonFood{
+  //           background-color: transparent;
+  //           padding: .5em 1em;
+  //           border: none;
+  //           font-size: 1.5em;
+  //           font-family: 'Cinzel', serif;
+  //           font-weight: bold;
+  //           &:hover{
+  //             background-color: #bc8049a6;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
   //menus
   .containerMenu{
     position: absolute;
@@ -207,6 +223,7 @@
     z-index: -1;
     display: flex;
     padding: 0;
+    flex-wrap: wrap;
     &.active{
       z-index:4;
     }
@@ -215,6 +232,10 @@
       height: 100%;
       width: 50%;
       transition: .5s;
+        @include mq($mobile){
+            height: 50%;
+            width: 100%;
+        }
     }
     .imgMenu{
       background-size: cover;
@@ -230,8 +251,19 @@
       background-repeat: no-repeat;
       transform: translateX(100%);
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
       &.active{
         transform: translateX(0);
+      }
+      .titleAnimate{
+          margin: 1em 0;
+      }
+      img{
+          max-width: 90%;
+          max-height: 90%;
       }
       .feather{
         position: absolute;
