@@ -1,5 +1,6 @@
-import React from 'react'
-import FeatherIcon from 'feather-icons-react'
+import React from 'react';
+import FeatherIcon from 'feather-icons-react';
+import logoFdm from '../assets/images/logo_fdm.png';
 
 class Header extends React.Component {
   constructor(props){
@@ -34,6 +35,20 @@ class Header extends React.Component {
     $header.classList.toggle('visible')
   }
 
+    handleSection = (value) => {
+        const element = document.querySelector(`#${value}`)
+        let distanceElement;
+        if(value === 'bebidas' ){
+            const elemP = element.offsetParent;
+            distanceElement = elemP.offsetTop + element.offsetTop;
+        }else{
+            distanceElement = element.offsetTop;
+        }
+        window.scrollTo(0, distanceElement)
+    }
+
+
+
   render(){
     return(
       <div className='globalHeaderContainer'>
@@ -45,18 +60,31 @@ class Header extends React.Component {
           onClick={this.toggleMenu}
         />
         <div className='logoContainer'>
-          <img src='https://fiebre.s3.us-east-2.amazonaws.com/fiebre/Logo+FdM-01.png'/>
+          <img src={logoFdm}/>
         </div>
         <div className='headerOptions'>
           <ul className='optionsHeader'>
-            <li>¿Quienes Somos?</li>
-            <li>Menú de Bebidas</li>
-            <li>Menú de alimentos</li>
-            <li>Club Fiebrecero</li>
-            <li>facturación</li>
-            <li>contacto</li>
-            <li>Encuesta de <br/> satisfacción</li>
-            <li>Noticias</li>
+            <li
+                onClick={ ()=>this.handleSection('who') }
+                >
+                ¿Quienes Somos?
+            </li>
+            <li
+                onClick={()=>this.handleSection('bebidas') }
+            >
+                Menú de Bebidas
+            </li>
+            <li
+                onClick={()=>this.handleSection('menuA') }
+            >
+                Menú de alimentos
+            </li>
+            <li>
+                contacto
+            </li>
+            {/* <li>
+                Encuesta de <br/> satisfacción
+            </li> */}
           </ul>
         </div>
       </div>

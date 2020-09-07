@@ -29,8 +29,8 @@ export default cervezas = (props) => {
           if(isActive){
             console.log($description)
             bottles[i].setAttribute('src',pintaActive)
-            $titleDescription.innerHTML = 'pinta'
-            $description.innerHTML = 'Este tipo de vaso es uno de los vasos más utilizados en los pubs ingleses. Su forma de cono invertido con un ensanchamiento cerca del borde permite la formación de una espuma cremosa. <br /> <span>Tipo de cerveza: </span> Red Ale, Porter, IPA, Stout, entre otros... '
+            $titleDescription.innerHTML = 'flauta'
+            $description.innerHTML = 'El vaso es estrecho en la parte inferior y ligeramente más ancho en la parte superior, debido a su forma alargada, atrapa fácilmente el aroma y es visualmente muy agradable. <br /> <span>Tipo de cerveza: </span> Weizen, Witbier, German Pilsner, Pale Lager, entre otros... '
           }else bottles[i].setAttribute('src',pinta);
           break;
         case 'tarro':
@@ -52,8 +52,8 @@ export default cervezas = (props) => {
         case 'stout':
           if(isActive){
             bottles[i].setAttribute('src',stoutActive);
-            $titleDescription.innerHTML = 'flauta'
-            $description.innerHTML = 'El vaso es estrecho en la parte inferior y ligeramente más ancho en la parte superior, debido a su forma alargada, atrapa fácilmente el aroma y es visualmente muy agradable. <br /> <span>Tipo de cerveza: </span> Weizen, Witbier, German Pilsner, Pale Lager, entre otros... '
+            $titleDescription.innerHTML = 'pinta'
+            $description.innerHTML = 'Este tipo de vaso es uno de los vasos más utilizados en los pubs ingleses. Su forma de cono invertido con un ensanchamiento cerca del borde permite la formación de una espuma cremosa. <br /> <span>Tipo de cerveza: </span> Red Ale, Porter, IPA, Stout, entre otros...'
           }
           else bottles[i].setAttribute('src',stout);
           break;
@@ -64,47 +64,72 @@ export default cervezas = (props) => {
     }
   }
 
+  const clickImg = async (e) => {
+     const imgBeer = e.target;
+     const parentImg = imgBeer.closest('.slideBeer');
+     const numPosition = parentImg.getAttribute('dataB')
+     console.log(numPosition);
+     switch (numPosition) {
+         case '1':
+            await moveSlider('left');
+            typeImg()
+            break;
+        case '2':
+            if(window.innerWidth > 601){
+                await moveSlider('left');
+                await moveSlider('left');
+                typeImg()
+            }
+            break;
+        case '3':
+            if(window.innerWidth > 601){
+                await moveSlider('right');
+                typeImg()
+            }
+            break;
+         default:
+     }
+  }
+
+
   return (
     <div className='contentBeers'>
       <div className='descriptionBeerContainer'>
         <span className='first'></span>
-        <h1 className='titleDescriptionBeer' id='titleDescription'>pinta</h1>
+        <h1 className='titleDescriptionBeer' id='titleDescription'>flauta</h1>
         <p className='descriptionBeer' id='descriptionBeer'>
-          Este tipo de vaso es uno de los vasos más utilizados en los pubs ingleses.
-          Su forma de cono invertido con un ensanchamiento cerca del borde permite la
-          formación de una espuma cremosa. <br /> <span>Tipo de cerveza: </span>
-          Red Ale, Porter, IPA, Stout, entre otros...
+          El vaso es estrecho en la parte inferior y ligeramente más ancho en la parte superior, debido a su forma alargada, atrapa fácilmente el aroma y es visualmente muy agradable. <br /> <span>Tipo de cerveza: </span> Weizen, Witbier, German Pilsner, Pale Lager, entre otros...
         </p>
         <span className='last'></span>
       </div>
-      <button className='moveSlider' onClick={async()=>{ await moveSlider('left'); typeImg() }}>
+      {/*}<button className='moveSlider' onClick={async()=>{ await moveSlider('left'); typeImg() }}>
         <FeatherIcon icon="chevron-left" size='30'/>
-      </button>
+      </button>*/}
       <div className='sliderBeers'>
         <div className='slideBeer' dataB='0'>
           <div className='imageBeer'>
-            <img className='beer active' onClick={()=>typeImg('pinta')} dataImg='pinta' src={pintaActive} />
+            <img onClick={clickImg} className='beer active' dataImg='pinta' src={pintaActive} />
           </div>
         </div>
         <div className='slideBeer tarro' dataB='1'>
           <div className='imageBeer'>
-            <img className='beer' dataImg='tarro' src={tarro} />
+            <img onClick={clickImg} className='beer' dataImg='tarro' src={tarro} />
           </div>
         </div>
         <div className='slideBeer' dataB='2'>
           <div className='imageBeer'>
-            <img className='beer copa' dataImg='copa' src={copa} />
+            <img onClick={clickImg} className='beer copa' dataImg='copa' src={copa} />
           </div>
         </div>
         <div className='slideBeer' dataB='3'>
           <div className='imageBeer'>
-            <img className='beer' dataImg='stout' src={stout} />
+            <img onClick={clickImg} className='beer' dataImg='stout' src={stout} />
           </div>
         </div>
       </div>
-      <button className='moveSlider' onClick={async()=>{ await moveSlider('right'); typeImg() }}>
+      {/*}<button className='moveSlider' onClick={async()=>{ await moveSlider('right'); typeImg() }}>
         <FeatherIcon icon="chevron-right" size='30' />
-      </button>
+      </button>*/}
       <img className='imgLogo' src={LogoBeer}/>
     </div>
   );

@@ -1,0 +1,59 @@
+.networks{
+    position: fixed;
+    bottom: 5%;
+    right: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99;
+    .imgNW{
+        height: 5em;
+        margin-bottom: 1em;
+        img{
+            height: 100%;
+        }
+    }
+    .logosNW{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 3em;
+        padding-bottom: 5px;
+        position: relative;
+        svg{
+            margin: .5em 0;
+            g{
+                path{
+                    fill: #000;
+                }
+            }
+            &.ig{
+                g{
+                    path{
+                        fill: transparent;
+                    }
+                }
+            }
+        }
+        &:after{
+            content: '';
+            background-color: $gold;
+            width: 2px;
+            height: 3em;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+        }
+    }
+    .wordContact{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(-90deg);
+        height: 100px;
+        width: 50px;
+        font-weight: bold;
+    }
+}

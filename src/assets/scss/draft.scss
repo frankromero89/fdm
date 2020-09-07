@@ -1,5 +1,21 @@
 .containerDraft{
   display: block;
+  height: 246px;
+  padding: 1em;
+  background-image: url(../images/bg_beer_menu.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include mq($mobile){
+      height: auto;
+  }
+  .titleAnimate{
+      margin-top: 1em;
+      margin-bottom: 1em;
+      .titleSection{
+          color: #fff;
+      }
+  }
   .contentDraft{
     position: fixed;
     height: 100vh;
@@ -67,11 +83,12 @@
           }
         }
       }
-      .glassServed{
+      .glassServed,
+      .glassServedLerma{
         height: 20%;
         position: relative;
         transform:translateX(20%);
-        transition: .5s;
+        transition: .35s;
       }
     }
     .sectionDescription{
@@ -167,6 +184,7 @@
         }
         @include mq($mobile){
           width: 90%;
+          flex-wrap: wrap;
           .descriptionBeer{
             margin-left: .5em;
             .titleDescription{
@@ -188,24 +206,56 @@
       }
     }
   }
-  .titleInfo{
-    height: 3em;
-    width: 100%;
-    background-color: $gold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    h1{
-      text-transform: uppercase;
-      text-align: center;
-      font-size: 1.5em;
-      font-weight: 400;
-      letter-spacing: .5em;
+    .contentDrafts{
+        height: 100%;
+        border: 1px solid $gold;
+        .containerTriggersDraft{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            .titleInfo,
+            .titleInfoLerma{
+                width: 30%;
+                max-width: 300px;
+                background-color: $gold;
+                padding: 1em;
+                margin: 0 3em;
+                cursor: pointer;
+                h1{
+                    font-size: 1em;
+                }
+                @include mq($mobile){
+                    width: 90%;
+                    margin-bottom: 1em;
+                }
+            }
+        }
     }
-    position: relative;
-    @include mq($mobile){
-      h1{ font-size: .9em;}
-    }
-  }
+
+  // .titleInfo{
+  //
+  // }
+  // .titleInfo,
+  // .titleInfoLerma{
+  //   height: 3em;
+  //   width: 100%;
+  //   background-color: $gold;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   flex-direction: column;
+  //   cursor: pointer;
+  //   h1{
+  //     text-transform: uppercase;
+  //     text-align: center;
+  //     font-size: 1.5em;
+  //     font-weight: 400;
+  //     letter-spacing: .5em;
+  //   }
+  //   position: relative;
+  //   @include mq($mobile){
+  //     h1{ font-size: .9em;}
+  //   }
+  // }
 }

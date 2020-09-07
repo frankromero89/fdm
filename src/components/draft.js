@@ -4,16 +4,15 @@ import FeatherIcon from 'feather-icons-react'
 import lineDraft from '../assets/images/draft-line.png'
 import maderal1 from '../assets/images/maderal1.png'
 import served from '../assets/images/maderal-served.png'
-import glass from '../assets/images/beer-draft.png'
 import Slider from 'react-slick'
+import vasoDraft from '../assets/js/svg'
 
-let draft;
-export default draft = (props) => {
+const draft = (props) => {
   const settings= {
     dots: false,
     infinite: false,
     slidesToShow: 10,
-    slidesToScroll: 1,
+    slidesToScroll: 5,
     responsive:[
       {
         breakpoint: 600,
@@ -46,7 +45,7 @@ export default draft = (props) => {
             }
           </Slider>
         </div>
-        <img className='glassServed' src={glass}/>
+        { vasoDraft() }
       </div>
       {props.beers &&
         <div className='sectionDescription'>
@@ -60,23 +59,6 @@ export default draft = (props) => {
               </div>
               <div className='detailsBeer'>
                 <p>{`${beerCurrent.abv}% ABV - ${beerCurrent.ibu} IBU - ${beerCurrent.original_brewery}`}</p>
-                <ul className='rankingBeer'>
-                  <li className='circleRank'>
-                    <div className='fillCircle'></div>
-                  </li>
-                  <li className='circleRank'>
-                    <div className='fillCircle'></div>
-                  </li>
-                  <li className='circleRank'>
-                    <div className='fillCircle'></div>
-                  </li>
-                  <li className='circleRank'>
-                    <div className='fillCircle'></div>
-                  </li>
-                  <li className='circleRank'>
-                    <div className='fillCircle'></div>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
@@ -88,3 +70,5 @@ export default draft = (props) => {
     </div>
   );
 };
+
+export default draft;

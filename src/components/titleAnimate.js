@@ -8,7 +8,7 @@ class TitleAnimate extends Component{
     window.addEventListener("scroll",this.scrollAnimate);
       const $reviews = document.querySelectorAll('.titleAnimate');
       const options = {
-         threshold: 1
+         threshold: .6
       }
       console.log($reviews)
       for(let i = 0; i < $reviews.length; i ++) {

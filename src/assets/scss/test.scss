@@ -1,0 +1,92 @@
+
+.containerTest{
+    background-image: url('../images/bg_test.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .contentTest{
+        height: 100%;
+        width: 100%;
+        color: $white;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-bottom: 2em;
+        .titleSection{
+            margin-top: 2em;
+            margin-bottom: 0;
+        }
+        .subtitle{
+            margin-top: .5em;
+            color: $white;
+        }
+        .formTest{
+            form{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                .dataCustomer{
+                    width: 30%;
+                    .field{
+                        label{color: $white;}
+                    }
+                }
+                .testService{
+                    width: 65%;
+                    .radios{
+                        border-bottom: 2px solid #fff;
+                    .values{
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: center;
+                            margin-bottom: 1em;
+                            p{
+                                width: 18%;
+                                margin-bottom: 0;
+                            }
+                        }
+                        .inline{
+                            justify-content: flex-end;
+                            width: 100%;
+                            label{
+                                width: 10%;
+                                color: $white;
+                            }
+                            .field{
+                                width: 18%;
+                            }
+                        }
+                    }
+                    .askBoolean{
+                        padding-top: 1em;
+                        .ask{
+                            margin-bottom: 1em;
+                            .fields{
+                                display: flex;
+                                justify-content: center;
+                                .field{
+                                    label{ color: #fff; }
+                                }
+                            }
+                            &.enteraste{
+                                display: flex;
+                                align-items: center;
+                                flex-direction: column;
+                                .field{
+                                    width: 70%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .suggest{
+                    width: 100%;
+                    margin-bottom: 1.5em;
+                    p{
+                        width: fit-content;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+.glassServed,
+.glassServedLerma{
+    .cls-1 {
+        fill: transparent;
+    }
+
+    .cls-2 {
+        fill: #f8cb7b;
+    }
+
+    .cls-3 {
+        fill: none;
+        stroke: #8c827c;
+        stroke-miterlimit: 10;
+        stroke-width: 1.1px;
+    }
+    &.animated{
+        .cls-1{
+            fill: #fff;
+            transition: .2s;
+            transition-delay: .6s;
+        }
+        .cls-2{
+            transform-origin: center bottom;
+            animation: fill-glass .6s;
+            -webkit-animation: fill-glass .6s;
+        }
+    }
+    @keyframes fill-glass {
+        0%{
+            transform: scaleY(.1);
+        }
+        50%{
+            transform: scaleY(.1);
+        }
+        100%{
+            transform: scaleY(1);
+        }
+    }
+
+    @-webkit-keyframes fill-glass {
+        0%{
+            transform: scaleY(.1);
+        }
+        50%{
+            transform: scaleY(.1);
+        }
+        100%{
+            transform: scaleY(1);
+        }
+    }
+}
+
+//animations
